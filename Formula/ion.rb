@@ -7,20 +7,20 @@ class Ion < Formula
 The swiss knife for every SysAdmin/DevOps!
 "
   homepage "https://github.com/mas2020-golang/ion"
-  version "0.3.0-dev.3"
+  version "0.3.0-rc.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-dev.3/ion_0.3.0-dev.3_Darwin-x86_64.tar.gz"
-      sha256 "92e9eb077f8a931e39cec36945225ae853386581549f4a6441df89a3b247e47e"
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Darwin-x86_64.tar.gz"
+      sha256 "aa0c65a326381986b4a6735cfc8afe6ca5349c6ba8b91d4e027899790fb59056"
 
       def install
         bin.install "ion"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-dev.3/ion_0.3.0-dev.3_Darwin-arm64.tar.gz"
-      sha256 "b89261949793c505f835e7cafed53f4a56627bf19ee8548235ab99f819db5a69"
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Darwin-arm64.tar.gz"
+      sha256 "d5699aef8f50be48b1fa9fead3d54b290fc2db235f0dbe5f2627c17e0bb55c75"
 
       def install
         bin.install "ion"
@@ -29,17 +29,17 @@ The swiss knife for every SysAdmin/DevOps!
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-dev.3/ion_0.3.0-dev.3_Linux-x86_64.tar.gz"
-      sha256 "24979e9bcc68308d75ee173395fedbd083555b31d8e3222db4c2bed58af9fda8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Linux-arm64.tar.gz"
+      sha256 "e5e58d7fbf67cd7c7037cf55e57a416eee17b1bdf3589ff22b8ac36a36729868"
 
       def install
         bin.install "ion"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-dev.3/ion_0.3.0-dev.3_Linux-arm64.tar.gz"
-      sha256 "ac1ea7b6360f49dd94a10e5b79102f6e1927ab4e70d5daffaba2115204fe30ce"
+    if Hardware::CPU.intel?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Linux-x86_64.tar.gz"
+      sha256 "132552c5a3ce802012c3f3bb5fe98df73ddad8e1b4e377d15d4075d9552ceb7e"
 
       def install
         bin.install "ion"
