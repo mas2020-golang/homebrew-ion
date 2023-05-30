@@ -7,20 +7,20 @@ class Ion < Formula
 The swiss knife for every SysAdmin/DevOps!
 "
   homepage "https://github.com/mas2020-golang/ion"
-  version "0.3.0-rc.2"
+  version "0.3.0-rc.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Darwin-x86_64.tar.gz"
-      sha256 "aa0c65a326381986b4a6735cfc8afe6ca5349c6ba8b91d4e027899790fb59056"
+    if Hardware::CPU.arm?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.3/ion_0.3.0-rc.3_Darwin-arm64.tar.gz"
+      sha256 "1d0146d037e9bf3c734200185f1b7e1b4e770b43650ac2e608c09e990b6c43cd"
 
       def install
         bin.install "ion"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Darwin-arm64.tar.gz"
-      sha256 "d5699aef8f50be48b1fa9fead3d54b290fc2db235f0dbe5f2627c17e0bb55c75"
+    if Hardware::CPU.intel?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.3/ion_0.3.0-rc.3_Darwin-x86_64.tar.gz"
+      sha256 "925c82673e6e0d914d3d0a36b5c2af8223d2a65270fb1e0aa0a62409846664ca"
 
       def install
         bin.install "ion"
@@ -29,17 +29,17 @@ The swiss knife for every SysAdmin/DevOps!
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Linux-arm64.tar.gz"
-      sha256 "e5e58d7fbf67cd7c7037cf55e57a416eee17b1bdf3589ff22b8ac36a36729868"
+    if Hardware::CPU.intel?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.3/ion_0.3.0-rc.3_Linux-x86_64.tar.gz"
+      sha256 "d135ab38872ead6b5c0b2cae295a558a9417434a4532b94236f64f198f66ed8c"
 
       def install
         bin.install "ion"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.2/ion_0.3.0-rc.2_Linux-x86_64.tar.gz"
-      sha256 "132552c5a3ce802012c3f3bb5fe98df73ddad8e1b4e377d15d4075d9552ceb7e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.3/ion_0.3.0-rc.3_Linux-arm64.tar.gz"
+      sha256 "1580080d86519ba896dbf5b5dd763ae2ed8ca4f266456deac53c978c80cd51fd"
 
       def install
         bin.install "ion"
