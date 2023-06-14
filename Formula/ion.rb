@@ -7,20 +7,20 @@ class Ion < Formula
 The swiss knife for every SysAdmin/DevOps!
 "
   homepage "https://github.com/mas2020-golang/ion"
-  version "0.3.0-rc.4"
+  version "0.3.0-rc.5"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.4/ion_0.3.0-rc.4_Darwin-x86_64.tar.gz"
-      sha256 "8b6403ac210de4821a91620988378fdc4577abe01b3832bf8141a2d8f9fe508a"
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.5/ion_0.3.0-rc.5_Darwin-x86_64.tar.gz"
+      sha256 "d8ffd5f26ef1ecd2681895b2fca5b948fb6f706443571326871c4b4f07ad0195"
 
       def install
         bin.install "ion"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.4/ion_0.3.0-rc.4_Darwin-arm64.tar.gz"
-      sha256 "adb90cad471d993d5a62da3a308ee9874195c9611f5dee0332f428ccda75fd24"
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.5/ion_0.3.0-rc.5_Darwin-arm64.tar.gz"
+      sha256 "9edbb19bbd7706c98f320d6ade53728561d77f50495c4a30a73f431b433acaf2"
 
       def install
         bin.install "ion"
@@ -30,16 +30,16 @@ The swiss knife for every SysAdmin/DevOps!
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.4/ion_0.3.0-rc.4_Linux-x86_64.tar.gz"
-      sha256 "98a1bf151fb389bd175fd63e132d8a92fa60b7b3f44aa1a15c68dc9e26392dd9"
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.5/ion_0.3.0-rc.5_Linux-x86_64.tar.gz"
+      sha256 "6215bacd3457e52a1bec1a47a2e2de1963a826a03378dfb3f92a6b8cb57fde8a"
 
       def install
         bin.install "ion"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.4/ion_0.3.0-rc.4_Linux-arm64.tar.gz"
-      sha256 "1a6da53271c07d9cf4657d9765ddb1021a829292913a74080667f4f8bc3f79d3"
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.0-rc.5/ion_0.3.0-rc.5_Linux-arm64.tar.gz"
+      sha256 "4116d115306046a975d4a797e504cce35f5a32600274a94777dfdfbb4d2841d4"
 
       def install
         bin.install "ion"
