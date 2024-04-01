@@ -7,20 +7,20 @@ class Ion < Formula
 The swiss knife for every SysAdmin/DevOps!
 "
   homepage "https://github.com/mas2020-golang/ion"
-  version "0.3.1"
+  version "0.4.0-dev.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.1/ion_Darwin_arm64.tar.gz"
-      sha256 "256925242b6c633e83fb608f212e829127438b3d33bfa05732b4c16b3a8c18cb"
+    if Hardware::CPU.intel?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.4.0-dev.1/ion_Darwin_x86_64.tar.gz"
+      sha256 "316fb10c27328e53756208d25a4e3a5a2b7c3adda1dd922da724b6b7b5469478"
 
       def install
         bin.install "ion"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.1/ion_Darwin_x86_64.tar.gz"
-      sha256 "d4d689bae8d3d6596ab4a352219f6b59f96c3c2773704ff2b3a9caaa20737180"
+    if Hardware::CPU.arm?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.4.0-dev.1/ion_Darwin_arm64.tar.gz"
+      sha256 "064424f569f17756edb7a2d1a43f3112bbfda95dcb69b26c260f92e588432e27"
 
       def install
         bin.install "ion"
@@ -29,17 +29,17 @@ The swiss knife for every SysAdmin/DevOps!
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.1/ion_Linux_x86_64.tar.gz"
-      sha256 "0c47f1d3f4c50c55b755316a8dc8cfa014030a7b454662c06fbdc2af7d8d12d8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.4.0-dev.1/ion_Linux_arm64.tar.gz"
+      sha256 "d86e0412f7053c01ba033bbd369fd51411ec4724761b9f0a9be10327208acc84"
 
       def install
         bin.install "ion"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mas2020-golang/ion/releases/download/v0.3.1/ion_Linux_arm64.tar.gz"
-      sha256 "7069f381b56e3b65fa8723ba339b932be61988e6ee5a89845725aefea9685565"
+    if Hardware::CPU.intel?
+      url "https://github.com/mas2020-golang/ion/releases/download/v0.4.0-dev.1/ion_Linux_x86_64.tar.gz"
+      sha256 "d4f24863a613a9693addc179987c15e9366fca41ca1ab0cfd7d114c20dbbc7d0"
 
       def install
         bin.install "ion"
